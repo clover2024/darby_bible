@@ -87,7 +87,7 @@ def parse_verses_direct(chapter_content):
             
         # 修改正则表达式，匹配数字后直接跟符号的情况（如8*、8(、8[、8{）
         # 新的模式匹配：数字后可以直接跟空格或特殊符号
-        verse_match = re.match(r'^(\d+)(?:\s+|[*(\[{])(.*)$', line)
+        verse_match = re.match(r'^(\d+)(?:\s+|[*(\[{-])(.*)$', line)
         if verse_match:
             # 如果已经有当前经文，保存它
             if current_verse is not None and current_text:
